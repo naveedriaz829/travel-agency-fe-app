@@ -1,0 +1,136 @@
+@mixin btn {
+    background-color: $btn-clr;
+    color: $transparent;
+    width: 250px;
+    height: 55px;
+    border-radius: 80px;
+    font-family: $heading-face;
+    font-weight: bold !important;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    &:hover {
+        color: $transparent !important;
+    }
+}
+
+@mixin icon {
+    font-size: 25px;
+}
+
+
+/*links*/
+@mixin links {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 33px;
+    color: $links-clr !important;
+    text-transform: capitalize;
+}
+
+/*image*/
+@mixin img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* headings */
+@mixin heading {
+    font-size: $heading-size !important;
+    font-family: $heading-face !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    line-height: 6vmin !important;
+    color: $black-clr !important;
+    letter-spacing: 1.5px;
+
+    span {
+        color: $heading-span-clr;
+    }
+}
+
+/* paragraph text */
+@mixin text {
+    font-size: $text-size !important;
+    font-family: $text-face !important;
+    font-weight: 500 !important;
+    color: $paragraph-clr;
+}
+
+/* cards */
+@mixin card {
+    border: none !important;
+}
+
+@mixin card-img {
+    @include img;
+    border-radius: 20px;
+}
+
+@mixin card-title {
+    @include heading;
+    font-weight: 500 !important;
+    color: $heading-span-clr !important;
+    font-size: $text-size !important;
+}
+
+h2 {
+    @include heading;
+    font-family: $text-face;
+}
+
+p {
+    @include text;
+}
+
+img {
+    @include img();
+}
+
+.card {
+    @include card;
+
+    img {
+        @include card-img;
+        height: 50vh;
+    }
+
+    .card-body {
+        padding: 0;
+
+        .card-title {
+            @include card-title;
+        }
+    }
+}
+
+.icon {
+    background-color: $white-clr !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        font-size: 25px;
+        color: #23BDEE;
+    }
+}
+
+.outline-btn {
+    @include btn;
+    background-color: transparent;
+    border: 1px solid $white-clr;
+    width: 200px !important;
+    font-weight: 500 !important;
+    font-size: $text-clr;
+}
+.icon-view{
+    height: 25px !important;
+    width: 25px !important;
+}
